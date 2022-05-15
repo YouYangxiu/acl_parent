@@ -33,6 +33,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         List<String> permissionValueList = permissionService.selectPermissionValueByUserId(user.getId());
         SecurityUser securityUser = new SecurityUser();
         securityUser.setPermissionValueList(permissionValueList);
+        securityUser.setCurrentUserInfo(curUser);
         return securityUser;
     }
 }
